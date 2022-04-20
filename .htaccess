@@ -1,0 +1,5 @@
+# Force SSL on entire site
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://stefaneyr.com/$1 [L,R=301,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
